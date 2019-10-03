@@ -19,6 +19,8 @@ class CreateStudentsTable extends Migration
             $table->date('effective_from');
             $table->String('name_thar');
             $table->String('section_class');
+            $table->integer('school_id')->unsigned()->nullable();
+            $table->foreign('school_id')->references('id')->on('schools');
             $table->String('roll_no');
             $table->date('admission_date');
             $table->date('nepali_date');

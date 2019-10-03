@@ -147,7 +147,7 @@ return [
         ],
         [
             'text'        => 'Student',
-            'url'         => 'admin/school',
+            'url'         => 'admin/student',
             'icon'        => 'far fa-file',
             'label'       => 4,
             'label_color' => 'success',

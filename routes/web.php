@@ -43,12 +43,10 @@ Route::group(["prefix" =>"admin","namespace"=>"Admin"],function(){
     Route::resource('/school','SchoolController');
     Route::POST('/school/{id}/update','SchoolController@update')->name('school.update');
     Route::POST('/school/{id}/destroy','SchoolController@destroy')->name('school.destroy');
+
+    /*Student Registration*/
+    Route::resource('/student','StudentController');
 });
 
 /*Student Registration*/
-Route::group(["prefix" =>"student","namespace"=>"Student"],function(){
-  
-    Route::resource('/Student','StudentController');
- 
-});
 
