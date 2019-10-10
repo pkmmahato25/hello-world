@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\School;
 use App\Student;
 
 class StudentController extends Controller
@@ -26,7 +27,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $school=School::latest()->get();
+        // dd($school);
+        return view('admin.student.create',compact('school'));
     }
 
     /**

@@ -4,6 +4,10 @@
     <link rel="stylesheet"
           href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
           <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+          <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.dataTables.min.css">
+          <link rel="stylesheet" href="{{asset('datepicker/bootstrap-datepicker.css')}}">
+          <link rel="stylesheet" href="{{asset('datepicker/bootstrap-datepicker.min.css')}}">
+           
           <style>
                 .form-error {
              
@@ -17,6 +21,8 @@
              border-radius: 5px;
   
              }
+             th, td { white-space: nowrap; }
+    
                 </style>
     @stack('css')
     @yield('css')
@@ -172,6 +178,18 @@
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.flash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
+    <script src="{{asset('datepicker/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('datepicker/bootstrap-timepicker.min.js')}}"></script>
+    <!-- bootstrap datepicker -->
+<script src="{{asset('datepicker/bootstrap-datepicker.min.js')}}"></script>
+    
     {!! Toastr::message() !!}
     <script>
         @if($errors->any())
@@ -183,6 +201,70 @@
         @endforeach
         @endif
         </script>
+        <script>
+                $(function () {
+                  //Initialize Select2 Elements
+                  $('.select2').select2()
+              
+                  //Datemask dd/mm/yyyy
+                //   $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+                  //Datemask2 mm/dd/yyyy
+              
+              
+                  //Date picker
+                  $('#datepicker').datepicker({
+                    autoclose: false,
+		beforeShowDay: $.noop,
+		calendarWeeks: false,
+		clearBtn: false,
+		daysOfWeekDisabled: [],
+		endDate: Infinity,
+		forceParse: true,
+		format: 'mm/dd/yyyy',
+		keyboardNavigation: true,
+		language: 'en',
+		minViewMode: 0,
+		multidate: false,
+		multidateSeparator: ',',
+		orientation: "auto",
+		rtl: false,
+		startDate: -Infinity,
+		startView: 0,
+		todayBtn: false,
+		todayHighlight: false,
+		weekStart: 0
+
+                  })
+                 
+
+              
+                  //iCheck for checkbox and radio inputs
+                  $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+                    checkboxClass: 'icheckbox_minimal-blue',
+                    radioClass   : 'iradio_minimal-blue'
+                  })
+                  //Red color scheme for iCheck
+                  $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+                    checkboxClass: 'icheckbox_minimal-red',
+                    radioClass   : 'iradio_minimal-red'
+                  })
+                  //Flat red color scheme for iCheck
+                  $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+                    checkboxClass: 'icheckbox_flat-green',
+                    radioClass   : 'iradio_flat-green'
+                  })
+              
+                  //Colorpicker
+                  $('.my-colorpicker1').colorpicker()
+                  //color picker with addon
+                  $('.my-colorpicker2').colorpicker()
+              
+                  //Timepicker
+                  $('.timepicker').timepicker({
+                    showInputs: false
+                  })
+                })
+              </script>
     @stack('js')
     @yield('js')
 @stop

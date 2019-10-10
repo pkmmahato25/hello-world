@@ -46,6 +46,7 @@ Route::group(["prefix" =>"admin","namespace"=>"Admin"],function(){
 
     /*Student Registration*/
     Route::resource('/student','StudentController');
+    Route::get('/student/create','StudentController@create')->name('student.create');
 });
 
 /*Student Registration*/
