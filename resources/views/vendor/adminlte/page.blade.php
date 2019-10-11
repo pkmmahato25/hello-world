@@ -187,6 +187,9 @@
     <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
     <script src="{{asset('datepicker/bootstrap-timepicker.js')}}"></script>
     <script src="{{asset('datepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('datepicker/nepali/nepali.datepicker.v2.2.min.js')}}"></script>
+	<link rel="stylesheet" type="text/css" href="{{asset('datepicker/nepali/css/bootstrap.min.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset('datepicker/nepali/nepali.datepicker.v2.2.min.css')}}" />
     <!-- bootstrap datepicker -->
 <script src="{{asset('datepicker/bootstrap-datepicker.min.js')}}"></script>
     
@@ -202,6 +205,16 @@
         @endif
         </script>
         <script>
+            $('#nepaliDate').nepaliDatePicker({
+                onFocus: true,
+                format: 'dd/mm/yyyy',
+    closeOnDateSelect: true,
+    npdMonth: true,
+			npdYear: true,
+			ndpEnglishInput: 'englishDate'
+		});
+        </script>
+        <script>
                 $(function () {
                   //Initialize Select2 Elements
                   $('.select2').select2()
@@ -213,25 +226,24 @@
               
                   //Date picker
                   $('#datepicker').datepicker({
-                    autoclose: false,
-		beforeShowDay: $.noop,
-		calendarWeeks: false,
-		clearBtn: false,
-		daysOfWeekDisabled: [],
+                    autoclose: true,
+	
+		calendarWeeks: true,
+		clearBtn:true,
 		endDate: Infinity,
 		forceParse: true,
-		format: 'mm/dd/yyyy',
+        format: 'dd/mm/yyyy',
 		keyboardNavigation: true,
 		language: 'en',
 		minViewMode: 0,
 		multidate: false,
 		multidateSeparator: ',',
-		orientation: "auto",
+		orientation: "bottom",
 		rtl: false,
 		startDate: -Infinity,
 		startView: 0,
-		todayBtn: false,
-		todayHighlight: false,
+		todayBtn: true,
+		todayHighlight: true,
 		weekStart: 0
 
                   })
