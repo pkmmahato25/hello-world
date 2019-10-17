@@ -7,6 +7,7 @@
           <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.0/css/buttons.dataTables.min.css">
           <link rel="stylesheet" href="{{asset('datepicker/bootstrap-datepicker.css')}}">
           <link rel="stylesheet" href="{{asset('datepicker/bootstrap-datepicker.min.css')}}">
+          <link rel="stylesheet" href="{{asset('vendor/adminlte/vendor/iCheck/all.css')}}">
            
           <style>
                 .form-error {
@@ -187,6 +188,7 @@
     <script src="https://cdn.datatables.net/buttons/1.6.0/js/buttons.print.min.js"></script>
     <script src="{{asset('datepicker/bootstrap-timepicker.js')}}"></script>
     <script src="{{asset('datepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('vendor/adminlte/vendor/iCheck/icheck.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('datepicker/nepali/nepali.datepicker.v2.2.min.js')}}"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('datepicker/nepali/css/bootstrap.min.css')}}" />
 	<link rel="stylesheet" type="text/css" href="{{asset('datepicker/nepali/nepali.datepicker.v2.2.min.css')}}" />
@@ -247,34 +249,22 @@
 		weekStart: 0
 
                   })
-                 
 
-              
-                  //iCheck for checkbox and radio inputs
-                  $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-                    checkboxClass: 'icheckbox_minimal-blue',
-                    radioClass   : 'iradio_minimal-blue'
-                  })
-                  //Red color scheme for iCheck
-                  $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-                    checkboxClass: 'icheckbox_minimal-red',
-                    radioClass   : 'iradio_minimal-red'
-                  })
-                  //Flat red color scheme for iCheck
-                  $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-                    checkboxClass: 'icheckbox_flat-green',
-                    radioClass   : 'iradio_flat-green'
-                  })
-              
-                  //Colorpicker
-                  $('.my-colorpicker1').colorpicker()
-                  //color picker with addon
-                  $('.my-colorpicker2').colorpicker()
-              
-                  //Timepicker
-                  $('.timepicker').timepicker({
-                    showInputs: false
-                  })
+        //iCheck for checkbox and radio inputs
+          $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass   : 'iradio_minimal-blue'
+          })
+          //Red color scheme for iCheck
+          $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass   : 'iradio_minimal-red'
+          })
+          //Flat red color scheme for iCheck
+          $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+            checkboxClass: 'icheckbox_flat-green',
+            radioClass   : 'iradio_flat-green'
+          })
                 })
               </script>
     @stack('js')
