@@ -49,11 +49,13 @@
                         <tr>
                             <th>Action</th>
                             <th>No</th>
+                            <th>Name</th>
                             <th>School</th>
                             <th>ID Number</th>
                             <th>Effective Date</th>
                             <th>Name Thar</th>
-                            <th>Section & Class</th>
+                            <th>Section</th>
+                            <th>Class</th>
                             <th>Roll No</th>
                             <th>Admission Date </th>
                             <th>Nepali Date </th>
@@ -100,11 +102,13 @@
                     
                                 </td>
                             <td>{{$key+1}}</td>
+                            <td>{{$value->name ?? ""}}</td>
                             <td>{{$value->school ?$value->school->name :""}}</td>
                             <td>{{$value->id_number ?? ""}}</td>
                             <td>{{$value->effective_from ?? ""}}</td>
-                            <td>{{$value->name_thar ?? ""}}</td>
-                            <td>{{$value->section_class ?? ""}}</td>
+                            <td>{{$value->thar ?? ""}}</td>
+                            <td>{{$value->section_id?? ""}}</td>
+                            <td>{{$value->class_id?? ""}}</td>
                             <td>{{$value->roll_no ?? ""}}</td>
                             <td>{{$value->admission_date ?? ""}}</td>
                             <td>{{$value->nepali_date ?? ""}}</td>
@@ -117,8 +121,8 @@
                             <td>{{$value->caste_detail ?? ""}}</td>
                             <td>{{$value->father_name ?? ""}}</td>
                             <td>{{$value->mother_name ?? ""}}</td>
-                            <td>{{$value->GrandFather_name ?? ""}}</td>
-                            <td>{{$value->Guradian_name ?? ""}}</td>
+                            <td>{{$value->grandfather_name ?? ""}}</td>
+                            <td>{{$value->guradian_name ?? ""}}</td>
                             <td>{{$value->zone ?? ""}}</td>
                             <td>{{$value->village_town ?? ""}}</td>
                             <td>{{$value->district ?? ""}}</td>
@@ -126,7 +130,7 @@
                             <td>{{$value->temporary_address ?? ""}}</td>
                             <td>{{$value->contact_number ?? ""}}</td>
                             <td>{{$value->remarks ?? ""}}</td>
-                            <td> <img src="{{URL::asset('storage/uploads/school/thumbnails/'.$value->image)}}" class="img-circle thumbnail" alt="" width="20%" ></td>
+                            <td> <img src="{{URL::asset('storage/uploads/student/thumbnails/'.$value->image)}}" class="img-circle thumbnail" alt="" width="120%" ></td>
                             <td>{{$value->created_at ->diffForHumans() ?? ""}}</td>
                             <td>{{$value->updated_at ->diffForHumans() ?? ""}}</td>
                            
