@@ -249,6 +249,27 @@
 		weekStart: 0
 
                   })
+        $('#admission_date').datepicker({
+        autoclose: true,
+		calendarWeeks: true,
+		clearBtn:true,
+		endDate: Infinity,
+		forceParse: true,
+        format: 'dd/mm/yyyy',
+		keyboardNavigation: true,
+		language: 'en',
+		minViewMode: 0,
+		multidate: false,
+		multidateSeparator: ',',
+		orientation: "bottom",
+		rtl: false,
+		startDate: -Infinity,
+		startView: 0,
+		todayBtn: true,
+		todayHighlight: true,
+		weekStart: 0
+
+                  })
 
         //iCheck for checkbox and radio inputs
           $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({

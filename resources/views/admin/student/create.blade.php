@@ -33,7 +33,7 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">School Name</label>
+                                                <label for="school_name">School Name</label>
                                                 <select class="form-control m-bot15" name="school_name">
                                                      <option value="">Select School</option>
                                                       @foreach($school as $value)
@@ -45,14 +45,14 @@
                                          
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">ID number</label>
-                                                <input type="text" class="form-control"name="id_number" id="id_number" value="">
+                                                <label for="id_number">ID number</label>
+                                                <input type="text" class="form-control"name="id_number" id="id_number" value="" autocomplete="off">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Effective Date(DD/MM/YYYY)</label>
+                                                <label for="effective_date">Effective Date(DD/MM/YYYY)</label>
                                                 <div class="input-group date">
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
@@ -63,8 +63,8 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Name</label>
-                                                <input type="text" class="form-control"name="stuname" id="stuname" value="">
+                                                <label for="name">Name</label>
+                                                <input type="text" class="form-control"name="name" id="name" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -72,26 +72,26 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Thar</label>
-                                                <input type="text" class="form-control"name="thar" id="thar" value="">
+                                                <label for="thar">Thar</label>
+                                                <input type="text" class="form-control"name="thar" id="thar" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Section</label>
-                                                <input type="text" class="form-control"name="section" id="section" value="">
+                                                <label for="section">Section</label>
+                                                <input type="number" class="form-control"name="section" id="section" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Class</label>
-                                                <input type="text" class="form-control"name="class" id="class" value="">
+                                                <label for="class">Class</label>
+                                                <input type="number" class="form-control"name="class" id="class" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Roll No</label>
-                                                <input type="text" class="form-control"name="roll_no" id="roll_no" value="">
+                                                <label for="roll_no">Roll No</label>
+                                                <input type="number" class="form-control"name="roll_no" id="roll_no" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -99,8 +99,8 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Admission Date</label>
-                                                <input type="text" class="form-control"name="admission_date" id="admission_date" value="">
+                                                <label for="admission_date">Admission Date</label>
+                                                <input type="text" class="form-control"name="admission_date" id="admission_date" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -115,22 +115,22 @@
                                     <div class="col-md-12">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="category">Nepali Date</label>
-                                                <input type="text" class="form-control nepali-calendar"name="nepali_date" id="nepaliDate" autocomplete="off" placeholder="Select Date">
+                                                <label for="nepali_date">Nepali Date</label>
+                                                <input type="text" class="form-control nepali-calendar"name="nepali_date" id="nepaliDate" autocomplete="off" placeholder="Select Date" autocomplete="off">
                                             </div>
                                         </div>
                                             
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="category">English Date </label>
-                                                <input type="text" class="form-control"name="english_date" id="englishDate" value="" readonly>
+                                                <label for="english_date">English Date </label>
+                                                <input type="text" class="form-control"name="english_date" id="englishDate" value="" readonly autocomplete="off">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="category">Age</label>
-                                                <input type="text" class="form-control"name="age" id="age" value="">
+                                                <label for="age">Age</label>
+                                                <input type="number" class="form-control"name="age" id="age" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -144,28 +144,48 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Sex</label>
-                                                <input type="text" class="form-control"name="sex" id="sex" value="">
+                                                <label for="sex">Sex</label>
+                                                <select name="sex" id="sex" class="form-control">
+                                                    <option value="">Select Gender</option>
+                                                    @foreach(config('constant.GENDER_ENUM') as $value=>$gender)
+                                                    <option value="{{$value}}" >{{$gender}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                             
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Student Type</label>
-                                                <input type="text" class="form-control"name="student_type" id="student_type" value="">
+                                                <label for="student_type">Student Type</label>
+                                                <select name="student_type" id="student_type" class="form-control">
+                                                    <option value="">Select Student Type</option>
+                                                    @foreach(str_replace('_', ' ',config('constant.Student_Type')) as $value=>$student_type)
+                                                    <option value="{{$value}}" >{{$student_type}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Religion</label>
-                                                <input type="text" class="form-control"name="religion" id="religion" value="">
+                                                <label for="religion">Religion</label>
+                                                <select name="religion" id="religion" class="form-control">
+                                                    <option value="">Select Religion</option>
+                                                    @foreach(config('constant.Religion') as $value=>$religion)
+                                                    <option value="{{$value}}" >{{$religion}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Mother Tongue</label>
-                                                <input type="text" class="form-control"name="mother_tongue" id="mother_tongue" value="">
+                                                <label for="mother_tongue">Mother Tongue</label>
+                                                <select name="mother_tongue" id="mother_tongue" class="form-control">
+                                                    <option value="">Select Mother Toungue</option>
+                                                    @foreach(config('constant.Language') as $value=>$language)
+                                                    <option value="{{$value}}" >{{$language}}</option>
+                                                    @endforeach
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
@@ -179,27 +199,27 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Caste Detail</label>
-                                                <input type="text" class="form-control"name="caste_detail" id="caste_detail" value="">
+                                                <label for="caste_detail">Caste Detail</label>
+                                                <input type="text" class="form-control"name="caste_detail" id="caste_detail" value="" autocomplete="off">
                                             </div>
                                         </div>
                                             
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Dalit
-                                                    <input type="radio" name="r3" class="flat-red" checked>
+                                                    <input type="radio" value ='0' name="cast" class="flat-red" checked>
                                                 </label> | 
                                                 <label> Janjati
-                                                    <input type="radio" name="r3" class="flat-red">
+                                                    <input type="radio" value ='1'name="cast" class="flat-red">
                                                 </label> | 
                                                 <label>Other
-                                                    <input type="radio" name="r3" class="flat-red" >
+                                                    <input type="radio" value ='2' name="cast" class="flat-red" >
                                                 </label>
                                             </div>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="form-group">
-                                                <label for="category">Image</label>
+                                                <label for="image">Image</label>
                                                 <input type="file" class="form-control" name="image">
                                             {{-- <img src="{{URL::asset('storage/admin/school/school.png')}}" height="30px" width="30px"> --}}
                                             </div>
@@ -215,26 +235,26 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Father Name</label>
-                                                <input type="text" class="form-control"name="father_name" id="father_name" value="">
+                                                <label for="father_name">Father Name</label>
+                                                <input type="text" class="form-control"name="father_name" id="father_name" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Mother Name</label>
-                                                <input type="text" class="form-control"name="mother_name" id="mother_name" value="">
+                                                <label for="mother_name">Mother Name</label>
+                                                <input type="text" class="form-control"name="mother_name" id="mother_name" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">GrandFather Name</label>
-                                                <input type="text" class="form-control"name="grandfather_name" id="grandfather_name" value="">
+                                                <label for="grandfather_name">GrandFather Name</label>
+                                                <input type="text" class="form-control"name="grandfather_name" id="grandfather_name" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Guardian Name</label>
-                                                <input type="text" class="form-control"name="guardian_name" id="guardian_name" value="">
+                                                <label for="guardian_name">Guardian Name</label>
+                                                <input type="text" class="form-control"name="guardian_name" id="guardian_name" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -248,26 +268,26 @@
                                     <div class="col-md-12">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Zone</label>
-                                                <input type="text" class="form-control"name="zone" id="zone" value="">
+                                                <label for="zone">Zone</label>
+                                                <input type="text" class="form-control"name="zone" id="zone" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Village Town</label>
-                                                <input type="text" class="form-control"name="village" id="village" value="">
+                                                <label for="village">Village Town</label>
+                                                <input type="text" class="form-control"name="village" id="village" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">District</label>
-                                                <input type="text" class="form-control"name="district" id="district" value="">
+                                                <label for="district">District</label>
+                                                <input type="text" class="form-control"name="district" id="district" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="category">Ward</label>
-                                                <input type="text" class="form-control"name="ward" id="ward" value="">
+                                                <label for="ward">Ward</label>
+                                                <input type="text" class="form-control"name="ward" id="ward" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
@@ -281,20 +301,20 @@
                                     <div class="col-md-12">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="category">Temporary Address</label>
-                                                <input type="text" class="form-control"name="tempaddress" id="tempaddress" value="">
+                                                <label for="tempaddress">Temporary Address</label>
+                                                <input type="text" class="form-control"name="tempaddress" id="tempaddress" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="category">Contact Number</label>
-                                                <input type="text" class="form-control"name="contactnumber" id="contactnumber" value="">
+                                                <label for="contactnumber">Contact Number</label>
+                                                <input type="number" class="form-control"name="contactnumber" id="contactnumber" value="" autocomplete="off">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="category">Remarks</label>
-                                                <input type="text" class="form-control"name="Remarks" id="Remarks" value="">
+                                                <label for="remark">Remarks</label>
+                                                <input type="text" class="form-control"name="remarks" id="remarks" value="" autocomplete="off">
                                             </div>
                                         </div>
                                     </div>
